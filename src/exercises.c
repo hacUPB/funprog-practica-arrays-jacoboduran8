@@ -50,7 +50,7 @@ int sumFirstLast(int arr[], int n)
 {
     int FirstLast;
 
-    FirstLast = arr[0] + arr[n - 1];
+    FirstLast = arr[0] + arr[n-1];
 
     return FirstLast;
 }
