@@ -79,12 +79,23 @@ int subtractArraysSum(int a[], int b[], int n)
 
 int mergeArraysSum(int a[], int n1, int b[], int n2)
 {
-    // Escriba aquí su código
+    int suma = 0;
+    for(int i = 0; i < n1; i++){
+        suma = suma + a[i];
+    }
+    for(int i = 0; i < n2; i++){
+        suma = suma + b[i];
+    }
+    return suma;
 }
 
 int productArray(int arr[], int n)
 {
-    // Escriba aquí su código
+    int producto = 1;
+    for(int i = 0; i < n; i++){
+        producto = producto * arr[i];
+    }
+    return producto;
 }
 
 // -------------------------------
@@ -93,5 +104,15 @@ int productArray(int arr[], int n)
 
 void calcSumAverage(int arr[], int n, int *sum, float *average)
 {
-    // Escriba aquí su código
+    *sum = 0;
+    float sum_temp = *sum;
+
+    for(int i = 0; i < n; i++){
+        *sum = *sum + arr[i];
+    }
+    if(n !=0){
+        *average = sum_temp / n;
+    } else {
+        *average = 0;
+    }
 }
