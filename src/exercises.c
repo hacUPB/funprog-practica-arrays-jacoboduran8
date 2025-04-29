@@ -50,9 +50,13 @@ int sumFirstLast(int arr[], int n)
 {
     int FirstLast;
 
+    if( n == 0){
+        return 0;
+    } else {
     FirstLast = arr[0] + arr[n-1];
 
     return FirstLast;
+    }
 }
 
 int findMin(int arr[], int n)
@@ -104,15 +108,18 @@ int productArray(int arr[], int n)
 
 void calcSumAverage(int arr[], int n, int *sum, float *average)
 {
-    *sum = 0;
-    float sum_temp = *sum;
+    int sum_temp = 0;
+
+    if( n == 0){
+        *sum = 0;
+        *average = 0.0;
+        return;
+    }
 
     for(int i = 0; i < n; i++){
-        *sum = *sum + arr[i];
+        sum_temp = sum_temp + arr[i];
     }
-    if(n !=0){
-        *average = sum_temp / n;
-    } else {
-        *average = 0;
-    }
+    *sum = sum_temp;
+    *average = (float)sum_temp / n;
+
 }
